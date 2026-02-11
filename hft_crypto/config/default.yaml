@@ -1,0 +1,24 @@
+# HFT Crypto - default config
+# Assumes infra: co-location, tick feed, FIX/WebSocket execution
+
+symbol: BTC/USD
+venue: coinbase
+
+signals:
+  order_book_levels: 5
+  weights:
+    order_book: 0.4
+    tick_flow: 0.35
+    momentum: 0.25
+
+position:
+  kelly_fraction: 0.25
+  vol_target: 0.15
+  max_position: 1.0
+
+order:
+  min_order_size: 0.0001
+  lot_size: 0.0001
+
+# Bar aggregation (ms) for signals that use bars; 0 = pure tick
+bar_ms: 100

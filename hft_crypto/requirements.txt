@@ -1,0 +1,3 @@
+# Python deps for HFT runner (optional)
+pyyaml>=6.0
+numpy>=1.20
