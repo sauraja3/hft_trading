@@ -8,7 +8,7 @@ Linux. The production clock is the x86 TSC (`rdtscp`). Other hosts, and one test
 
 ## Build and test
 
-CMake 3.16+, a C++17 compiler, pthreads, and Python 3 (the disabled-domain check compiles a file and reads the assembly).
+CMake 3.16+, a C++17 compiler, pthreads, and Python 3 (the disabled-domain check compiles a file and reads the assembly). Configure downloads GoogleTest 1.15.2; the tests link `GTest::gtest_main`.
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
