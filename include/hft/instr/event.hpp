@@ -1,6 +1,5 @@
 #pragma once
 
-#include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -59,7 +58,10 @@ struct StatsPayload {
 };
 
 static_assert(sizeof(StatsPayload) == 24);
-static_assert(std::endian::native == std::endian::little,
+#if !defined(__BYTE_ORDER__) || !defined(__ORDER_LITTLE_ENDIAN__)
+#error "the trace format needs a compiler that reports endianness"
+#endif
+static_assert(__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__,
               "the trace format is little-endian");
 
 }  // namespace hft::instr

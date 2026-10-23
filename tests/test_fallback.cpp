@@ -20,7 +20,7 @@ void expect(bool cond, const char* expr, const char* file, int line) {
 
 #define EXPECT(cond) expect(static_cast<bool>(cond), #cond, __FILE__, __LINE__)
 
-using Fallback = hft::instr::Domain<"fallback", true>;
+HFT_INSTR_DOMAIN(Fallback, "fallback", true);
 HFT_INSTR_MARKER(begin_marker, Fallback, "begin");
 HFT_INSTR_MARKER(end_marker, Fallback, "end");
 

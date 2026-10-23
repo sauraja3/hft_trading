@@ -68,9 +68,9 @@ bool pin_cpu0() {
     return ::sched_setaffinity(0, sizeof(set), &set) == 0;
 }
 
-using MarketData = hft::instr::Domain<"market_data", true>;
-using Strategy = hft::instr::Domain<"strategy", true>;
-using MarketDataDebug = hft::instr::Domain<"market_data_debug", false>;
+HFT_INSTR_DOMAIN(MarketData, "market_data", true);
+HFT_INSTR_DOMAIN(Strategy, "strategy", true);
+HFT_INSTR_DOMAIN(MarketDataDebug, "market_data_debug", false);
 
 HFT_INSTR_MARKER(outer_b, MarketData, "outer_b");
 HFT_INSTR_MARKER(outer_e, MarketData, "outer_e");

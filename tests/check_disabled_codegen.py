@@ -24,7 +24,7 @@ def main() -> None:
     result = subprocess.run(
         [
             compiler,
-            "-std=c++20",
+            "-std=c++17",
             "-O0",
             "-fno-stack-protector",
             "-S",

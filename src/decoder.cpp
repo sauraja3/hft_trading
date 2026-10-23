@@ -1,7 +1,6 @@
 #include "hft/instr/decoder.hpp"
 
 #include "hft/instr/event.hpp"
-#include "hft/instr/fixed_string.hpp"
 #include "hft/instr/id.hpp"
 
 #include <algorithm>
